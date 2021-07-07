@@ -1,0 +1,43 @@
+#mainContentArea {
+	margin-left: 164px;
+}
+.advancedSearchContainer {
+	height: 300px;
+}
+.commonContainer .listTable,
+.commonContainerSubHead table {
+	width: 487px;
+}
+.commonContainer .listTable td {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.commonContainer table {
+	font-size: 1em;
+}
+.commonContainerSubHead td h4 {
+	margin: 0px;
+	font-size: .8em;
+	line-height: .8em;
+	color: #FFFFFF;
+}
+.controlGeneratedTableContainer {
+	width: 507px;
+	font-size: 1em;
+	display: normal;
+	margin-left: 4px;
+}
+
+.searchResultsTable {
+	width: 507px;
+	margin-left: 2px;
+	font-size: 1em;
+	text-align: left;
+}
+.searchResultsTable div.expressionDiv,
+.searchResultsTable div.overflowFixDiv {
+    width: 363px;
+}
+.sidebarList li {
+	padding-left: 22px;
+}

@@ -1,0 +1,71 @@
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="RegExLib.Web.OuterShell"
+    CodeBehind="OuterShell.master.cs" %>
+
+<%@ Import Namespace="RegExLib" %>
+<%@ Register Src="UserControls/NavigationBar.ascx" TagName="NavigationBar" TagPrefix="uc" %>
+<%@ Register Src="~/UserControls/LeftNavigation.ascx" TagName="LeftNavigation" TagPrefix="uc" %>
+<%@ Register Src="~/UserControls/ProductSpotlight.ascx" TagName="ProductSpotlight"
+    TagPrefix="uc" %>
+<%@ Register Src="~/UserControls/TopContributors.ascx" TagName="TopContributors"
+    TagPrefix="uc" %>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>
+        <%= defaultPageTitle %>
+    </title>
+    <meta content="Regular Expression Library provides a searchable database of regular expressions.  Users can add, edit, rate, and test regular expressions."
+        name="description" />
+    <meta content="perl regular expression awk sed grep library regex regx regexlib asp.net asp net dotnet  tutorial example test build find search"
+        name="keywords" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapperOutside">
+        <div id="wrapperInside">
+            <div id="siteTop">
+                <h1>
+                    RegExLib.com Regular Expression Cheat Sheet (.NET)</h1>
+                <%--<div id="topNav" class="commonContainerHeader">
+                    <ul>
+                        <uc:NavigationBar ID="NavigationBar1" runat="server" />
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <LoggedInTemplate>
+                                <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/EditProfile.aspx">
+                                    Welcome, <asp:LoginName ID="LoginName1" runat="server" />
+                                </asp:HyperLink>
+                                [<asp:LinkButton ID="LinkButton1" runat="server" OnClick="Logout_Click">Logout</asp:LinkButton>]</li>
+                            </LoggedInTemplate>
+                            <AnonymousTemplate>
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                            </AnonymousTemplate>
+                        </asp:LoginView>
+                    </ul>
+                  </div>--%>
+            </div>
+            <div id="siteBody">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="copyrightLine">
+                <p>
+                    Copyright © 2001-<%=System.DateTime.Now.Year %>, <a href="http://SteveSmithBlog.com/">SteveSmithBlog.com</a></p>
+            </div>
+        </div>
+    </div>
+    </form>
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        _uacct = "UA-470225-2";
+        urchinTracker();
+    </script>
+    <script type='text/javascript'>//<![CDATA[
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+        }//]]></script>
+<script type='text/javascript' language='Javascript' src='http://s1.lqcdn.com/m.min.js?dt=2.3.110202.1'></script>
+<script type='text/javascript' language='Javascript'>    if ($.LqmAds) $.LqmAds();</script>
+</body>
+</html>

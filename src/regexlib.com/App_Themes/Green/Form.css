@@ -1,0 +1,27 @@
+﻿.Form h1
+{
+	margin: .5em 0em .5em 0em;
+}
+.Form label 
+{
+	float: left;
+	width: 10em;
+}
+.FormElement 
+{
+	width: 15em;
+	margin-bottom: .5em;
+}
+.FormElementCheck 
+{
+	width:1em;
+}
+.Form br
+{
+	clear:left;
+}
+.FormButton 
+{
+	margin-top: 1em;
+	margin-right: 1em;
+}

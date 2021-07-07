@@ -1,0 +1,76 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Fri Jul 22 01:17:05 2011
+
+   Source : d:\domains\stage.regexlib.com\
+     Dest : d:\domains\v2.regexlib.com\
+
+    Files : *.*
+	    
+Exc Files : web.config
+	    
+  Options : *.* /S /E /COPY:DATS /R:0 /W:0 
+
+------------------------------------------------------------------------------
+
+	                  34	d:\domains\stage.regexlib.com\
+	*EXTRA Dir        -1	d:\domains\v2.regexlib.com\CraigDesign\
+	*EXTRA Dir        -1	d:\domains\v2.regexlib.com\obj\
+	  *EXTRA File 		     441	AdvancedCheatSheet.aspx.cs
+	  *EXTRA File 		     644	AdvancedCheatSheet.aspx.designer.cs
+	  *EXTRA File 		     409	Blank.master.cs
+	  *EXTRA File 		    1160	Blank.master.designer.cs
+	  *EXTRA File 		     447	CheatSheet.aspx.cs
+	  *EXTRA File 		     493	CheatSheet.aspx.designer.cs
+	  *EXTRA File 		    1720	Contact.aspx.cs
+	  *EXTRA File 		    3639	Contact.aspx.designer.cs
+	  *EXTRA File 		    3777	Contributors.aspx.cs
+	  *EXTRA File 		    1972	Contributors.aspx.designer.cs
+	  *EXTRA File 		    1630	Default.aspx.cs
+	  *EXTRA File 		    4385	Default.aspx.designer.cs
+	  *EXTRA File 		      21	default.htm
+	  *EXTRA File 		    4509	DisplayPatterns.aspx.cs
+	  *EXTRA File 		    3367	DisplayPatterns.aspx.designer.cs
+	  *EXTRA File 		    4003	Edit.aspx.cs
+	  *EXTRA File 		    2331	Edit.aspx.designer.cs
+	  *EXTRA File 		    2060	EditProfile.aspx.cs
+	  *EXTRA File 		    5732	EditProfile.aspx.designer.cs
+	  *EXTRA File 		     406	Error404.aspx.cs
+	  *EXTRA File 		     446	ErrorPage.aspx.cs
+	  *EXTRA File 		     626	ErrorPage.aspx.designer.cs
+	  *EXTRA File 		      42	exclude.txt
+	  *EXTRA File 		     541	Login.aspx.cs
+	  *EXTRA File 		    1294	Login.aspx.designer.cs
+	  *EXTRA File 		    1372	MasterPage.master.cs
+	  *EXTRA File 		    4949	MasterPage.master.designer.cs
+	  *EXTRA File 		    1062	OuterShell.master.cs
+	  *EXTRA File 		    1635	OuterShell.master.designer.cs
+	  *EXTRA File 		    3162	REDetails.aspx.cs
+	  *EXTRA File 		    5284	REDetails.aspx.designer.cs
+	  *EXTRA File 		     668	Register.aspx.cs
+	  *EXTRA File 		    1705	Register.aspx.designer.cs
+	  *EXTRA File 		     446	Resources.aspx.cs
+	  *EXTRA File 		    2001	Resources.aspx.designer.cs
+	  *EXTRA File 		    9703	RETester.aspx.cs
+	  *EXTRA File 		   14080	RETester.aspx.designer.cs
+	  *EXTRA File 		    7628	Search.aspx.cs
+	  *EXTRA File 		    4685	Search.aspx.designer.cs
+	  *EXTRA File 		    6565	UserPatterns.aspx.cs
+	  *EXTRA File 		    2689	UserPatterns.aspx.designer.cs
+	  *EXTRA File 		   15207	Web - Copy.config
+	  *EXTRA File 		   15207	web.config.bak
+	  *EXTRA File 		    5978	WebProfile.cs
+	  *EXTRA File 		   16552	webservices.asmx.cs
+	    Newer     		     250	CheatSheet.htm  0%  100%  
+	    Newer     		   16243	Edit.aspx  0%  100%  
+	    Newer     		     731	Global.asax  0%  100%  
+	    Newer     		    8014	MasterPage.master  0%  100%  
+	    Newer     		    3681	OuterShell.master  0%  100%  
+	    Newer     		   30787	RegexLib.com.csproj  0%  100%  
+	    Newer     		    1151	RegexLib.com.csproj.user  0%  100%  
+	    Newer     		   21258	RETester.aspx  0%  100%  
+	                   2	d:\domains\stage.regexlib.com\_deploy\
+	    Newer     		       0	RegexlibDeployLog.txt100%  

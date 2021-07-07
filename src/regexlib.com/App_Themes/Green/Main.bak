@@ -1,0 +1,133 @@
+body {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	background: #fff;
+	margin: 0px;
+	padding: 0px;
+}
+
+/*  ----    */
+
+h1, h2, h3, h4 {
+	margin: 0;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+h4 
+{
+	font-size: 11px;
+}
+
+p , td, span
+{
+    font-size: 10px;
+	line-height: 1.4em;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #505050;
+	height: 1px;
+}
+
+
+a		{ text-decoration: none; font-family: Verdana; color: Blue ; font-weight: bold; font-size:11px }
+a:hover	{ text-decoration: none; font-family: Verdana; color: #333333; }
+
+ul {
+	list-style : none;
+	padding : 0px;
+	margin : 0px 5px;
+}
+
+
+/* Hosting Spotlight */
+
+.productSpotlight
+{
+	border: 1px solid #009900;
+	clear: both;
+	margin: 2px;
+	margin-left: 8px;
+	background-color: #FFFFFF;
+	font-size: 9px;
+	padding: 5px;
+	width: 180px;
+}
+
+.productSpotlight a
+{
+	font-weight: bolder;
+}
+
+
+/* Login View */
+
+.login .label {
+    display:block;
+}
+
+.login .textbox {
+	border: 1px solid #000000;
+	width: 140px;
+	vertical-align: middle;
+	padding: 3px;
+	margin: 2px 0 5px 0;
+}
+
+.login .button {
+    display:block;
+    margin-top:8px;
+    margin-bottom:8px;
+}
+
+
+
+/* TABS */
+
+.tabnav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.tabnav li {
+	display: inline;
+}
+.tabnav a {
+	display: block;
+	background: #dbf9bc;
+	float: left;
+	padding: 0.8em 1.0em;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 10px;
+	border: 1px solid #c3f991;
+	color: #5a9821;
+	/*margin-right: -1px;*/
+}
+.tabnav a:hover {
+	text-decoration: none;
+	color: #666666;
+	background: #efefef;
+	border: 1px solid #e1e1e1;
+}
+
+.MatchText 
+{
+    color: Green;
+}
+
+.NonMatchText 
+{
+    color: Red;
+}
+
+
+.StandardRow { background: #f7F6F3; color: #333333; }
+.HighlightRow { background: #dddddd; }
+td #leftPaneTd { background: green; }
+
+
+.PatternTable
+{
+	margin:15px 0px 15px 0px;
+}

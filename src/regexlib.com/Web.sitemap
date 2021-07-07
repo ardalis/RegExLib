@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+	<!-- Both = TopNav and Site Links on left side -->
+	<siteMapNode>
+    <siteMapNode url="~/CheatSheet.aspx" title="Regex Cheat Sheet" DisplayOn="Side" CssClass="starLink" />
+		<siteMapNode url="~/Default.aspx" title="Home" DisplayOn="Top" />
+    <siteMapNode url="~/Search.aspx" title="Search" DisplayOn="Both" />
+    <siteMapNode url="~/RETester.aspx" title="Regex Tester" DisplayOn="Both" />
+    <siteMapNode url="~/DisplayPatterns.aspx" title="Browse Expressions" DisplayOn="Both" />
+    <siteMapNode url="~/Add.aspx" title="Add Regex" DisplayOn="Both" />
+    <siteMapNode url="~/UserPatterns.aspx" title="Manage My Expressions" DisplayOn="Side" />
+    <siteMapNode url="~/Contributors.aspx" title="Contributors" DisplayOn="Side" />
+    <siteMapNode url="http://regexadvice.com/forums/" title="Regex Forums" DisplayOn="Community" />
+    <siteMapNode url="http://regexadvice.com/blogs/" title="Regex Blogs" DisplayOn="Community" />
+    <siteMapNode url="http://aspadvice.com/lists/SignUp/list.aspx?l=68&amp;c=16" title="Regex Mailing List" DisplayOn="Community" />
+    <siteMapNode url="~/Resources.aspx" title="Regex Resources" DisplayOn="Side" />
+		<siteMapNode url="~/WebServices.asmx" title="Web Services" DisplayOn="Side" ImageUrl="~/Images/WebService.gif" />
+    <siteMapNode url="http://lakequincy.com/advertisers/publisherinfo/regExLib.aspx" title="Advertise" DisplayOn="side" />
+		<siteMapNode url="~/Contact.aspx" title="Contact Us" DisplayOn="Side" />
+		<siteMapNode url="~/Register.aspx" title="Register" DisplayOn="Side" />
+		<siteMapNode url="http://feeds.feedburner.com/Regexlibcom-RecentPatterns" title="Recent Expressions" ImageUrl="~/Images/Xml.gif" DisplayOn="Side" CssClass="rssLink" />
+    <siteMapNode url="http://feeds.feedburner.com/Regexlibcom-RecentComments" title="Recent Comments" ImageUrl="~/Images/Xml.gif" DisplayOn="Side" CssClass="rssLink" />
+	</siteMapNode>
+	
+</siteMap>

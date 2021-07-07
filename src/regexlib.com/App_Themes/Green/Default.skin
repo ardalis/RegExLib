@@ -1,0 +1,34 @@
+<asp:Label runat="server" SkinId="ErrorLabel" ForeColor="Red" />
+
+<asp:FormView runat="Server"
+    BorderWidth="0" 
+    CellPadding="0" 
+     />
+
+<asp:Image Runat="server" ImageUrl="Images/LQM_advertise_here_button.gif" height="90" width="135" alt="Advertise on this site through Lake Quincy Media" border="0" skinId="AdvertiseImage" />
+
+<asp:Image Runat="server" ImageUrl="images/Rating1.png" alt="The rating for this expression." border="0" skinId="RatingImage1" />
+<asp:Image Runat="server" ImageUrl="images/Rating2.png" alt="The rating for this expression." border="0" skinId="RatingImage2" />
+<asp:Image Runat="server" ImageUrl="images/Rating3.png" alt="The rating for this expression." border="0" skinId="RatingImage3" />
+<asp:Image Runat="server" ImageUrl="images/Rating4.png" alt="The rating for this expression." border="0" skinId="RatingImage4" />
+<asp:Image Runat="server" ImageUrl="images/Rating5.png" alt="The rating for this expression." border="0" skinId="RatingImage5" />
+<asp:Image Runat="server" ImageUrl="images/arrow_back_all.png" alt="<< Step back to beginning" border="0" skinId="BackAll" width="16" height="17" />
+<asp:Image Runat="server" ImageUrl="images/arrow_back_1.png" alt="< Step back one page" border="0" skinId="BackOne" width="16" height="17" />
+<asp:Image Runat="server" ImageUrl="images/arrow_forward_1.png" alt="Step forward one page >" border="0" skinId="ForwardOne" width="16" height="17" />
+<asp:Image Runat="server" ImageUrl="images/arrow_forward_all.png" alt="Step forward to last page >>" border="0" skinId="ForwardAll" width="16" height="17" />
+<asp:Image Runat="server" ImageUrl="images/help_icon.png" alt="Help" border="0" skinId="HelpImage" width="11" height="11" />
+
+<asp:HyperLink Runat="server" ImageUrl="images/arrow_back_all.png" alt="<< Step back to beginning" border="0" skinId="BackAll" width="16" height="17" />
+<asp:HyperLink Runat="server" ImageUrl="images/arrow_back_1.png" alt="< Step back one page" border="0" skinId="BackOne" width="16" height="17" />
+<asp:HyperLink Runat="server" ImageUrl="images/arrow_forward_1.png" alt="Step forward one page >" border="0" skinId="ForwardOne" width="16" height="17" />
+<asp:HyperLink Runat="server" ImageUrl="images/arrow_forward_all.png" alt="Step forward to last page >>" border="0" skinId="ForwardAll" width="16" height="17" />
+
+<asp:ImageButton Runat="server" ImageUrl="Images/button-add.gif" skinid="AddImageButton"/>
+<asp:ImageButton runat="Server" ImageUrl="Images/button-edit.gif" skinid="EditImageButton" />
+<asp:ImageButton Runat="server" ImageUrl="Images/button-save.gif" SkinID="SaveImageButton" />
+<asp:ImageButton Runat="server" ImageUrl="Images/button-cancel.gif" SkinID="CancelImageButton" />
+<asp:Image Runat="server" ImageUrl="images/button-search.gif" alt="Find expressions." border="0" skinId="SearchImage" />
+<asp:Image Runat="server" ImageUrl="images/button-play.gif" alt="Test this expression." border="0" skinId="TestImage" />
+<asp:Image Runat="server" ImageUrl="images/button-details.gif" alt="Get more information about this expression." border="0" skinId="DetailsImage" />
+<asp:Image runat="Server" ImageUrl="Images/button-edit.gif" alt="Edit this expression." border="0" SkinId="EditImage" />
+<asp:Image Runat="server" ImageUrl="~/images/orcsweb_host_by_137x44.gif" height="44" width="137" alt="ORCSWeb Hosting" border="0" skinId="hostedByImage" />

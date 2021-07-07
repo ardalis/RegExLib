@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+	<Ad type="tool">
+		<ImageUrl>~/Images/Advertisers/regulator-logo.jpg</ImageUrl>
+		<NavigateUrl>http://regex.osherove.com/</NavigateUrl>
+		<AlternateText>The Regulator - a comprehensive .NET tool for testing Regular Expressions.</AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>80</Impressions>
+		<Title>The Regulator</Title>
+		<Description>
+			<![CDATA[
+			<p>We recommend "The Regulator" as a tool for testing regular expressions.  This tool supports the 
+			common operations: "Match", "Replace" and "Split" and also has tight integration with the webservices
+			offered by this site to allow you to submit patterns to this site directly from the tool itself.</p>
+			<p>Read the ADT Mag. online review <a href="http://www.adtmag.com/article.asp?id=8554">here</a>.</p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="tool">
+		<ImageUrl></ImageUrl>
+		<NavigateUrl>http://www.gotdotnet.com/Community/UserSamples/Details.aspx?SampleGuid=C712F2DF-B026-4D58-8961-4EE2729D7322</NavigateUrl>
+		<AlternateText>Eric Gunnerson's Regex Workbench</AlternateText>
+		<Keyword>None</Keyword>
+		<Impressions>60</Impressions>
+		<Title>Eric Gunnerson's Regex Workbench</Title>
+		<Description>
+			<![CDATA[
+			<p>Create, test, and study regular expressions with this workbench. With the "Examine-o-matic" feature, hover over the regex to decode what it means.</p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="tool">
+		<ImageUrl></ImageUrl>
+		<NavigateUrl>http://jregexptester.sourceforge.net/</NavigateUrl>
+		<AlternateText>JRegexpTester</AlternateText>
+		<Keyword>None</Keyword>
+		<Impressions>60</Impressions>
+		<Title>JRegexpTester</Title>
+		<Description>
+			<![CDATA[
+			<p>JRegexpTester is a standalone Swing application that helps you test regular expressions with the Sun Java standard API (java.util.regex). The extracted data can be modified with formatters similar to those used by sprintf, or with standard Java date and decimal formatters. It features RegExLib library integration with more than 900 patterns.</p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="tool">
+		<ImageUrl>~/Images/Advertisers/RegexCoach.png</ImageUrl>
+		<NavigateUrl>http://www.weitz.de/regex-coach/index.html</NavigateUrl>
+		<AlternateText>The Regex Coach</AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>80</Impressions>
+		<Title>The Regex Coach</Title>
+		<Description>
+			<![CDATA[
+			<p>The Regex Coach is a graphical application for Linux and Windows which can be used to experiment with (Perl-compatible) regular expressions interactively.</p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="tool">
+		<ImageUrl></ImageUrl>
+		<NavigateUrl>http://www.sellsbrothers.com/tools/#regexd</NavigateUrl>
+		<AlternateText>Sellsbrothers - Regex Designer .NET</AlternateText>
+		<Keyword>None</Keyword>
+		<Impressions>50</Impressions>
+		<Title>Sellsbrothers - Regex Designer .NET</Title>
+		<Description>
+			<![CDATA[
+			<p>RegexDesigner.NET is a powerful visual tool for helping you construct and test .NET Regular Expressions. When you are happy with your regular expression, RegexDesigner.NET lets you integrate it into your application through native C# or VB.NET code generation and compiled assemblies.</p>
+			]]>
+		</Description>
+	</Ad>
+  <Ad type="tool">
+    <ImageUrl>~/Images/Advertisers/Expresso.jpg</ImageUrl>
+    <NavigateUrl>http://www.ultrapico.com/Expresso.htm</NavigateUrl>
+    <AlternateText>Expresso is useful for learning how to use regular expressions and for developing and debugging regular expressions prior to incorporating them into C# or Visual Basic code.</AlternateText>
+    <Keyword>HomePage</Keyword>
+    <Impressions>80</Impressions>
+    <Title>Expresso</Title>
+    <Description>
+      <![CDATA[
+			<ul>
+				<li>Build complex regular expressions by selecting components from a palette </li>
+				<li>Test expressions against real or sample input data</li>
+				<li>Display all matches in a tree structure, showing captured groups, and all captures within a group </li>
+				<li>Build replacement strings and test the match and replace functionality </li>
+				<li>Highlight matched text in the input data </li>
+				<li>Test automatically for syntax errors </li>
+				<li>Generate Visual Basic or C# code </li>
+				<li>Save and restore data in a project file</li> 
+				<li>Maintain and expand a library of frequently used regular expressions </li>
+			</ul>
+			]]>
+    </Description>
+  </Ad>
+  <Ad type="tool">
+    <ImageUrl></ImageUrl>
+    <NavigateUrl>http://osteele.com/tools/rework/</NavigateUrl>
+    <AlternateText>reWork: a regular expression workbench</AlternateText>
+    <Keyword>None</Keyword>
+    <Impressions>80</Impressions>
+    <Title>reWork</Title>
+    <Description>
+      <![CDATA[
+			<p>reWork is an online regular expression workbench.  Enter a regular expression and an input string into the web page, and the results update as you type.  reWork also has code generation for PHP, Python, Ruby, and JavaScript, and (Firefox only) will display a parse tree and a state transition diagram of your regular expression.</p>
+			]]>
+    </Description>
+  </Ad>
+  <Ad type="tool">
+    <ImageUrl></ImageUrl>
+    <NavigateUrl>http://www.brics.dk/automaton/</NavigateUrl>
+    <AlternateText>dk.brics.automaton</AlternateText>
+    <Keyword>None</Keyword>
+    <Impressions>50</Impressions>
+    <Title>Finite State Automata for Java</Title>
+    <Description>
+      <![CDATA[
+			<p>This Java package contains a DFA/NFA implementation with Unicode alphabet (UTF16) and support for the standard regular expression operations (concatenation, union, Kleene star) and a number of non-standard ones (intersection, complement, etc.)</p>
+      <p>In contrast to many other automaton/regexp packages, this package is fast, compact, and implements real, unrestricted regular operations. It uses a symbolic representation based on intervals of Unicode characters.</p>
+			]]>
+    </Description>
+  </Ad>
+
+  <Ad type="tool">
+    <ImageUrl></ImageUrl>
+    <NavigateUrl>http://www.houseoffusion.com/groups/regex/</NavigateUrl>
+    <AlternateText>House of Fusion RegEx Mailing List</AlternateText>
+    <Keyword>None</Keyword>
+    <Impressions>40</Impressions>
+    <Title>Regular Expressions Mailing List on House of Fusion</Title>
+    <Description>
+      <![CDATA[
+			<p>House of Fusion Regular Expressions mailing list and forums. The focus here is on the language, not on a particular implementation.</p>
+			]]>
+    </Description>
+  </Ad>
+
+  <Ad type="tool">
+    <ImageUrl></ImageUrl>
+    <NavigateUrl>http://regexpal.com/</NavigateUrl>
+    <AlternateText>RegexPal JavaScript Tester</AlternateText>
+    <Keyword>None</Keyword>
+    <Impressions>40</Impressions>
+    <Title>JavaScript Regular Expression Tester</Title>
+    <Description>
+      <![CDATA[
+			<p>RegexPal is a simple but fast and powerful web-based JavaScript regular expression tester. It includes real-time match highlighting, and regex syntax highlighting.</p>
+			]]>
+    </Description>
+  </Ad>
+
+  <Ad type="tool">
+    <ImageUrl></ImageUrl>
+    <NavigateUrl>http://www.codeproject.com/cs/library/SqlRegEx.asp</NavigateUrl>
+    <AlternateText>Sql RegEx Use</AlternateText>
+    <Keyword>None</Keyword>
+    <Impressions>20</Impressions>
+    <Title>SQL2005 and Regular Expressions</Title>
+    <Description>
+      <![CDATA[
+			<p>With the advent of Sql Server 2005, Microsoft's DB can now use external DLLs like other .NET languages. This article provides a library of the basic regex functions and describes how to bootstrap it into SqlServer.</p>
+			]]>
+    </Description>
+  </Ad>
+
+  <Ad type="tool">
+    <ImageUrl></ImageUrl>
+    <NavigateUrl>http://www.sqlteam.com/article/regular-expressions-in-t-sql</NavigateUrl>
+    <AlternateText>Sql RegEx Use</AlternateText>
+    <Keyword>None</Keyword>
+    <Impressions>10</Impressions>
+    <Title>SQL2000 and Regular Expressions</Title>
+    <Description>
+      <![CDATA[
+			<p>See how to use regular expressions in SQL Server 2000.</p>
+			]]>
+    </Description>
+  </Ad>
+
+  <Ad type="tool">
+    <ImageUrl></ImageUrl>
+    <NavigateUrl>http://pgfearo.googlepages.com/</NavigateUrl>
+    <AlternateText>SketchPath</AlternateText>
+    <Keyword>None</Keyword>
+    <Impressions>10</Impressions>
+    <Title>SketchPath</Title>
+    <Description>
+      <![CDATA[
+			<p>SketchPath is a .NET XML/XPath/Regex development tool.</p>
+
+<p>It provides a rich graphical environment for 'as you type' matching of XPath or Regular Expressions against a loaded text/xml source file.
+If matching regular expressions against an XML file, the XPath locations of matches are auto-generated as you scan through the results.
+A free Beta version is available now.
+</p>
+			]]>
+    </Description>
+  </Ad>
+
+  <Ad type="book">
+		<ImageUrl>http://images.amazon.com/images/P/0672325667.01.MZZZZZZZ.jpg</ImageUrl>
+		<NavigateUrl>http://www.amazon.com/exec/obidos/ASIN/0672325667/aspalliancecom</NavigateUrl>
+		<AlternateText>Sams Teach Yourself Regular Expressions in 10 Minutes</AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>50</Impressions>
+		<Title>Mastering Regular Expressions</Title>
+		<Description>
+			<![CDATA[
+			<p>RegEx is supported in all major development environments (for use in editing and working with code) and will thus appeal to anyone using these tools. In addition, every JavaScript developer should be using RegEx, but most don't as it has never been taught to them properly before. Developers using ASP, C#, ColdFusion, Java JSP, PHP, Perl, Python, and more can (and should) be using RegEx, and so every one of them is a potential reader too. </p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="book">
+		<ImageUrl>http://images.amazon.com/images/P/059600415X.01.MZZZZZZZ.jpg</ImageUrl>
+		<NavigateUrl>http://www.amazon.com/exec/obidos/ASIN/059600415X/aspalliancecom</NavigateUrl>
+		<AlternateText>Regular Expression Pocket Reference</AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>50</Impressions>
+		<Title>Regular Expression Pocket Reference</Title>
+		<Description>
+			<![CDATA[
+			<p>Ideal as an introduction for beginners and a quick reference for advanced programmers, Regular Expression Pocket Reference is a comprehensive guide to regular expression APIs for C, Perl, PHP, Java, .NET, Python, vi, and the POSIX regular expression libraries. This book offers programmers a complete overview of the syntax and semantics of regular expressions, which are at the heart of every text-processing application. O'Reilly's Pocket References have become a favorite among programmers everywhere. By providing a wealth of important details in a concise, well-organized format, these handy books deliver just what you need to complete the task at hand. When you've reached a sticking point and need to get to a solution quickly, the new Regular Expression Pocket Reference is the book you'll want to have.</p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="book">
+		<ImageUrl>http://images.amazon.com/images/P/0596002890.01.MZZZZZZZ.jpg</ImageUrl>
+		<NavigateUrl>http://www.amazon.com/exec/obidos/ASIN/0596002890/aspalliancecom</NavigateUrl>
+		<AlternateText>Mastering Regular Expressions, Second Edition</AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>50</Impressions>
+		<Title>Mastering Regular Expressions, Second Edition</Title>
+		<Description>
+			<![CDATA[
+			<p>Regular expressions are a central element of UNIX utilities like egrep and programming languages such as Perl. But whether you're a UNIX user or not, you can benefit from a better understanding of regular expressions since they work with applications ranging from validating data-entry fields to manipulating information in multimegabyte text files. Mastering Regular Expressions quickly covers the basics of regular-expression syntax, then delves into the mechanics of expression-processing, common pitfalls, performance issues, and implementation-specific differences. Written in an engaging style and sprinkled with solutions to complex real-world problems, Mastering Regular Expressions offers a wealth information that you can put to immediate use.</p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="book">
+		<ImageUrl>http://images.amazon.com/images/P/B0000632ZU.01.MZZZZZZZ.jpg</ImageUrl>
+		<NavigateUrl>http://www.amazon.com/exec/obidos/ASIN/B0000632ZU/aspalliancecom</NavigateUrl>
+		<AlternateText>Regular Expressions with .NET </AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>50</Impressions>
+		<Title>Regular Expressions with .NET </Title>
+		<Description>
+			<![CDATA[
+			<p>This ebook is intended to be a complete introduction to Regular Expressions that can even be read and understood by programmers who have never heard of them. It is also intended to help experienced Regular Expression programmers come up to speed quickly on the .NET implementation of Regular Expressions. </p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="book">
+		<ImageUrl>http://images.amazon.com/images/P/1590591070.01.MZZZZZZZ.jpg</ImageUrl>
+		<NavigateUrl>http://www.amazon.com/exec/obidos/ASIN/1590591070/aspalliancecom</NavigateUrl>
+		<AlternateText>Java Regular Expressions: Taming the java.util.regex Engine</AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>50</Impressions>
+		<Title>Java Regular Expressions: Taming the java.util.regex Engine</Title>
+		<Description>
+			<![CDATA[
+			<p>Java has always been an excellent language for working with objects. But Java’s text manipulation mechanisms have always been limited, compared to languages like AWK and Perl. On the flip side, a new regular expressions package in Java 2 Standard Edition (J2SE) brings hope to the Java text mechanisms. This package provides you everything necessary to use regular expressions—all packaged in a simplified object-oriented framework. </p>
+			<p>In addition to working examples and best practices, this book features a detailed API reference with examples supporting nearly every method, and a step-by-step tutorial to create your own regular expressions. With time, you’ll discover that regular expressions are extremely powerful in your programming arsenal—and you’ll enjoy using them! And once you’ve mastered these tools, you’ll ponder how you ever managed without them?</p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="book">
+		<ImageUrl>http://images.amazon.com/images/P/0596006012.01.MZZZZZZZ.jpg</ImageUrl>
+		<NavigateUrl>http://www.amazon.com/exec/obidos/ASIN/0596006012/aspalliancecom</NavigateUrl>
+		<AlternateText>Oracle Regular Expressions Pocket Reference </AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>50</Impressions>
+		<Title>Oracle Regular Expressions Pocket Reference </Title>
+		<Description>
+			<![CDATA[
+			<p>Support for regular expressions in SQL and PL/SQL is one of the most exciting features of Oracle Database 10G. Oracle has long supported the ANSI-standard LIKE predicate for rudimentary pattern matching, but regular expressions take pattern matching to a new level. They provide a powerful way to select data that matches a pattern, as well as to manipulate, rearrange, and change that data. This concise pocket guide is part tutorial and part quick-reference. It's suitable for those who have never used regular expressions before, as well as those who have experience with Perl and other languages supporting regular expressions. The book describes Oracle Database 10G's support for regular expressions, including globalization support and differences between Perl's syntax and the POSIX syntax supported by Oracle 10G. It also provides a comprehensive reference, including examples, to all supported regular expression operators, functions, and error messages. O'Reilly's Pocket References have become a favorite among developers and database administrators everywhere. By providing a wealth of important details in a concise, well-organized format, these handy books deliver just what you need to complete the task at hand. Whether you're using regular expressions for the first time or applying your skills from other languages to the latest version of Oracle, the Oracle Regular Expressions Pocket Reference is the book to have close by.</p>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="tool">
+		<ImageUrl></ImageUrl>
+		<NavigateUrl>http://myregexp.com/</NavigateUrl>
+		<AlternateText>Online regex tester</AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>50</Impressions>
+		<Title>Regular Expression Editor</Title>
+		<Description>
+			<![CDATA[
+      <p>Java-applet that helps you test regular expressions flavor of the Sun Java standard API (java.util.regex)</p>
+      <ul>
+	      <li>Full highlighting of regular expression syntax for an easy visual clue<br>
+	      (including bracket matching, error detecting)</li>
+        <li>Tooltips will be shown when the mouse is over a part of the regex.</li>
+        <li>Evaluates your regular expression while you are typing;</li>
+	      <li>4 distinct match modes:
+           <ul>
+			      <li>Find a sequence of characters;</li>
+			      <li>Match a complete text;</li>
+		        <li>Split text (see java.lang.String.split(String regex));</li>
+		        <li>Replace;</li>
+	        </ul>
+	      </li>
+	      <li>Support for pattern flags (e.g. Pattern.CASE_INSENSITIVE, Pattern.DOTALL, ...);</li>
+	      <li>Generation of java source string literals based on the regexp, (escape slash, e.g. "\(x\)" becomes "\\(x\\)")</li>
+	      <li>Synchronized selection of regular expression and text: Just select part of the regexp to see which part of the text is matched by this part.</li>
+      </ul>
+			]]>
+		</Description>
+	</Ad>
+	<Ad type="tool">
+		<ImageUrl>http://www.antix.co.uk/Graphics/a.png</ImageUrl>
+		<NavigateUrl>http://www.antix.co.uk/Projects/RegexTester.aspx</NavigateUrl>
+		<AlternateText>Regex Tester</AlternateText>
+		<Keyword>HomePage</Keyword>
+		<Impressions>50</Impressions>
+		<Title>Regex Tester</Title>
+		<Description>
+			<![CDATA[
+			<p>Allows you to test while you write your Regular Expression</p>
+            <p>Shows all matches found in the PropertyGrid control so that you can drill down into the groups and captures</p>
+            <p>Shows the group name too, if you set one</p>
+			]]>
+		</Description>
+	</Ad>
+</Advertisements>

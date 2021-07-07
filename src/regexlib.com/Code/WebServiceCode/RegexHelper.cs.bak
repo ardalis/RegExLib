@@ -1,0 +1,641 @@
+using RegexLib.Common;
+using System;
+using System.Collections;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web;
+using System.Web.Caching;
+using ASPAlliance.Common ;
+using System.Text.RegularExpressions ;
+
+namespace RegexLib.Common {
+
+	/// <summary>
+	/// Used to access data related to regular expressions for http://aspsmith.com/re/
+	/// </summary>
+	/// TODO: Eliminate passing of readers between methods -- pass around Collections and CACHE THEM
+	public class RegexHelper : RegexLib.Data.DAL {
+		/// <summary>
+		/// Adds a new regular expression to the database.
+		/// </summary>
+		/// <param name="user_id"></param>
+		/// <param name="regular_expression"></param>
+		/// <param name="matches"></param>
+		/// <param name="not_matches"></param>
+		/// <param name="source"></param>
+		/// <param name="description"></param>
+		/// <returns></returns>
+		public static int addRegExp (int user_id, String regular_expression, String matches, String not_matches, String source, String description)
+		{
+			return addRegExp(user_id, regular_expression, matches, not_matches, source, description, 0);
+		}
+
+		/// <summary>
+		/// Populates a RegexpDetails object from an open DataReader.
+		/// </summary>
+		/// <param name="dr"></param>
+		/// <returns></returns>
+		private static RegExpDetails getRegExpDetailsFromSqlDataReader(SqlDataReader dr)
+		{
+			HttpContext hc = HttpContext.Current;
+			RegExpDetails objRegExpDetails = new RegExpDetails();
+			if(dr.Read())
+			{
+				hc.Trace.Write("getRegExpDetails","Datareader open and read, setting RegExpDetails struct values.");
+				try
+				{
+					objRegExpDetails.user_id = dr.GetInt32(dr.GetOrdinal("user_id"));
+					objRegExpDetails.regexp_id = dr.GetInt32(dr.GetOrdinal("regexp_id"));
+					objRegExpDetails.regular_expression = dr["regular_expression"].ToString();
+					objRegExpDetails.matches = dr["matches"].ToString();
+					objRegExpDetails.not_matches = dr["not_matches"].ToString();
+					objRegExpDetails.source = dr["source"].ToString();
+					objRegExpDetails.description = dr["description"].ToString();
+					objRegExpDetails.create_date = dr.GetDateTime(dr.GetOrdinal("create_date"));
+					objRegExpDetails.disable = (bool)dr.GetSqlBoolean(dr.GetOrdinal("disable"));
+					objRegExpDetails.rating = dr.GetInt32(dr.GetOrdinal("rating"));
+				}
+				catch(Exception e)
+				{
+					throw e;
+				}
+			}
+			else
+			{
+				throw(new Exception("RegExp not found."));
+			}
+			dr.Close();
+			return objRegExpDetails;
+		}
+		
+		/// <summary>
+		/// Adds a new regular expression to the database
+		/// </summary>
+		/// <param name="user_id"></param>
+		/// <param name="regular_expression"></param>
+		/// <param name="matches"></param>
+		/// <param name="not_matches"></param>
+		/// <param name="source"></param>
+		/// <param name="description"></param>
+		/// <param name="disable"></param>
+		/// <returns></returns>
+		public static int addRegExp (int user_id, String regular_expression, 
+			String matches, String not_matches, String source, String description, 
+			int disable)
+		{
+
+			SqlConnection conn = new SqlConnection(ConnectionString);
+			SqlCommand cmd = new SqlCommand("re_InsertRegexp",conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlParameter pUser_id = new SqlParameter("@user_id", SqlDbType.Int,4);
+			pUser_id.Value = user_id;
+			cmd.Parameters.Add(pUser_id);
+
+			SqlParameter pRegular_expression = new SqlParameter("@regular_expression", SqlDbType.NVarChar, 5000);
+			pRegular_expression.Value = regular_expression;
+			cmd.Parameters.Add(pRegular_expression);
+
+			SqlParameter pMatches = new SqlParameter("@matches", SqlDbType.NVarChar,100);
+			pMatches.Value = matches;
+			cmd.Parameters.Add(pMatches);
+
+			SqlParameter pNot_matches = new SqlParameter("@not_matches", SqlDbType.NVarChar,100);
+			pNot_matches.Value = not_matches;
+			cmd.Parameters.Add(pNot_matches);
+
+			SqlParameter pSource= new SqlParameter("@source", SqlDbType.NVarChar,150);
+			pSource.Value = source;
+			cmd.Parameters.Add(pSource);
+
+			SqlParameter pDescription= new SqlParameter("@description", SqlDbType.Text,2000000);
+			pDescription.Value = description;
+			cmd.Parameters.Add(pDescription);
+
+			SqlParameter pDisable= new SqlParameter("@disable", SqlDbType.Bit,1);
+			pDisable.Value = disable;
+			cmd.Parameters.Add(pDisable);
+
+			SqlParameter pRegexp_id = new SqlParameter("@regexp_id", SqlDbType.Int, 4);
+			pRegexp_id.Direction = ParameterDirection.Output;
+			cmd.Parameters.Add(pRegexp_id);
+
+			try
+			{
+				conn.Open();
+				cmd.ExecuteNonQuery();
+			}
+			catch(Exception e)
+			{
+				throw e;
+			}
+			finally
+			{
+				if (conn.State == ConnectionState.Open)
+					conn.Close();
+			}
+			return (int)(pRegexp_id.Value);
+		}
+
+		/// <summary>
+		/// Updates an existing regular expression
+		/// </summary>
+		/// <param name="regexp_id"></param>
+		/// <param name="user_id"></param>
+		/// <param name="regular_expression"></param>
+		/// <param name="matches"></param>
+		/// <param name="not_matches"></param>
+		/// <param name="source"></param>
+		/// <param name="description"></param>
+		/// <param name="disable"></param>
+		public static void updateRegExp (int regexp_id, int user_id, String regular_expression, 
+			String matches, String not_matches, String source, String description, 
+			int disable)
+		{
+
+			SqlConnection conn = new SqlConnection(ConnectionString);
+			SqlCommand cmd = new SqlCommand("re_UpdateRegexp",conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlParameter pRegexp_id = new SqlParameter("@regexp_id", SqlDbType.Int,4);
+			pRegexp_id.Value = regexp_id;
+			cmd.Parameters.Add(pRegexp_id);
+
+			SqlParameter pUser_id = new SqlParameter("@user_id", SqlDbType.Int,4);
+			pUser_id.Value = user_id;
+			cmd.Parameters.Add(pUser_id);
+
+			SqlParameter pRegular_expression = new SqlParameter("@regular_expression", SqlDbType.NVarChar,5000);
+			pRegular_expression.Value = regular_expression;
+			cmd.Parameters.Add(pRegular_expression);
+
+			SqlParameter pMatches = new SqlParameter("@matches", SqlDbType.NVarChar,100);
+			pMatches.Value = matches;
+			cmd.Parameters.Add(pMatches);
+
+			SqlParameter pNot_matches = new SqlParameter("@not_matches", SqlDbType.NVarChar,100);
+			pNot_matches.Value = not_matches;
+			cmd.Parameters.Add(pNot_matches);
+
+			SqlParameter pSource= new SqlParameter("@source", SqlDbType.NVarChar,150);
+			pSource.Value = source;
+			cmd.Parameters.Add(pSource);
+
+			SqlParameter pDescription= new SqlParameter("@description", SqlDbType.Text,2000000);
+			pDescription.Value = description;
+			cmd.Parameters.Add(pDescription);
+
+			SqlParameter pDisable= new SqlParameter("@disable", SqlDbType.Bit,1);
+			pDisable.Value = disable;
+			cmd.Parameters.Add(pDisable);
+
+			try
+			{
+				conn.Open();
+				cmd.ExecuteNonQuery();
+			}
+			catch(Exception e)
+			{
+				throw e;
+			}
+			finally
+			{
+				if (conn.State == ConnectionState.Open)
+					conn.Close();
+			}
+		}
+
+		/// <summary>
+		/// Adds a rating to a regular expression
+		/// </summary>
+		/// <param name="regexp_id"></param>
+		/// <param name="user_id"></param>
+		/// <param name="rating"></param>
+		public void rateRegExp (int regexp_id, int user_id, int rating)
+		{
+			SqlConnection conn = new SqlConnection(ConnectionString);
+			SqlCommand cmd = new SqlCommand("re_RateRegexp",conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlParameter pRegexp_id = new SqlParameter("@regexp_id", SqlDbType.Int,4);
+			pRegexp_id.Value = regexp_id;
+			cmd.Parameters.Add(pRegexp_id);
+
+			SqlParameter pUser_id = new SqlParameter("@user_id", SqlDbType.Int,4);
+			pUser_id.Value = user_id;
+			cmd.Parameters.Add(pUser_id);
+
+			SqlParameter pRating = new SqlParameter("@rating", SqlDbType.Int,4);
+			pRating.Value = rating;
+			cmd.Parameters.Add(pRating);
+
+			try
+			{
+				conn.Open();
+				cmd.ExecuteNonQuery();
+			}
+			catch(Exception e)
+			{
+				throw e;
+			}
+			finally
+			{
+				if (conn.State == ConnectionState.Open)
+					conn.Close();
+			}
+		}
+
+		/// <summary>
+		/// Returns information about a particular regular expression, in a RegExpDetails object.
+		/// </summary>
+		/// <param name="regexp_id"></param>
+		/// <returns></returns>
+		public static RegExpDetails getRegExpDetails (int regexp_id)
+		{
+			SqlDataReader dr = getRegExp(regexp_id);
+			return getRegExpDetailsFromSqlDataReader(dr);
+		}
+
+		/// <summary>
+		/// Returns information about a particular regular expression as a DataReader
+		/// </summary>
+		/// <param name="regexp_id"></param>
+		/// <returns></returns>
+		public static SqlDataReader getRegExp(int regexp_id) 
+		{
+
+			// Create Instance of Connection and Command Object
+			SqlConnection conn = new SqlConnection(ConnectionString);
+			SqlCommand cmd = new SqlCommand("re_GetRegExp", conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlParameter pRegexp_id = new SqlParameter("@regexp_id", SqlDbType.Int,4);
+			pRegexp_id.Value = regexp_id;
+			cmd.Parameters.Add(pRegexp_id);
+
+			// Execute the command
+			conn.Open();
+			SqlDataReader result = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+			// Return the datareader result
+			return result;
+		}
+
+		/// <summary>
+		/// Returns a count of how many regular expressions are in the database, total
+		/// </summary>
+		/// <returns></returns>
+		public static int getRegExpCount ()
+		{
+			System.Web.HttpContext.Current.Trace.Write("getRegExpCount","Entering...");
+			return getRegExpCount("", "", -1000, false, 0);
+		}
+
+		/// <summary>
+		/// Returns a count of how many regular expressions are in the database that match a keyword
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <returns></returns>
+		public static int getRegExpCount (String keyword)
+		{
+			return getRegExpCount(keyword, "", -1000, false, 0);
+		}
+
+		/// <summary>
+		/// Returns a count of how many regular expressions are in the database that match a keyword and a regular expression substring
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <param name="regexp_substring"></param>
+		/// <returns></returns>
+		public static int getRegExpCount (String keyword, String regexp_substring)
+		{
+			return getRegExpCount(keyword, regexp_substring, -10000, false, 0);
+		}
+
+		/// <summary>
+		/// Returns a count of how many regular expressions are in the database that match a keyword, regular expression substring, 
+		/// and have a rating above min_rating.
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <param name="regexp_substring"></param>
+		/// <param name="min_rating"></param>
+		/// <returns></returns>
+		public static int getRegExpCount (String keyword, String regexp_substring, int min_rating)
+		{
+			return getRegExpCount(keyword, regexp_substring, min_rating, false, 0);
+		}
+
+		/// <summary>
+		/// Returns a count of how many regular expressions are in the database that match a keyword, regular expression substring,
+		/// and have a rating above min_rating, including disabled ones if return_disabled is true.
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <param name="regexp_substring"></param>
+		/// <param name="min_rating"></param>
+		/// <param name="return_disabled"></param>
+		/// <returns></returns>
+		public static int getRegExpCount(string keyword, String regexp_substring, int min_rating, 
+			bool return_disabled) 
+		{
+			return getRegExpCount(keyword, regexp_substring, min_rating, false, 0);
+		}
+
+		/// <summary>
+		/// Returns a count of how many regular expressions are in the database that match a keyword, regular expression substring,
+		/// and have a rating above min_rating, including disabled ones if return_disabled is true.
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <param name="regexp_substring"></param>
+		/// <param name="min_rating"></param>
+		/// <param name="return_disabled"></param>
+		/// <param name="howmanyrows"></param>
+		/// <returns></returns>
+		public static int getRegExpCount(string keyword, String regexp_substring, int min_rating, 
+			bool return_disabled, int howmanyrows)
+		{
+			string cacheKey = "RegExCount" + keyword + regexp_substring.ToString() + min_rating.ToString() + return_disabled.ToString() + howmanyrows.ToString();
+			Object count = HttpContext.Current.Cache[cacheKey];
+			if(count == null)
+			{
+				System.Web.HttpContext.Current.Trace.Write("getRegExpCount","Entering...");
+				SqlConnection conn = new SqlConnection(ConnectionString);
+				SqlCommand cmd = new SqlCommand("re_CountRegexp",conn);
+				cmd.CommandType = CommandType.StoredProcedure;
+				System.Web.HttpContext.Current.Trace.Write("getRegExpCount","here...");
+				cmd.Parameters.Add(pMaker("@regexp_substring",SqlDbType.NVarChar, 100, ParameterDirection.Input,regexp_substring));
+				cmd.Parameters.Add(pMaker("@keyword",SqlDbType.NVarChar, 100, ParameterDirection.Input,keyword));
+				cmd.Parameters.Add(pMaker("@min_rating",SqlDbType.Int, 4, ParameterDirection.Input,min_rating));
+				if(return_disabled)
+				{
+					cmd.Parameters.Add(pMaker("@return_disabled",SqlDbType.Bit,1, ParameterDirection.Input,1));
+				}
+				else
+				{
+					cmd.Parameters.Add(pMaker("@return_disabled",SqlDbType.Bit,1, ParameterDirection.Input,0));
+				}
+				cmd.Parameters.Add(pMaker("@howmany",SqlDbType.Int, 4, ParameterDirection.Input,howmanyrows));
+				cmd.Parameters.Add(pMaker("@count",SqlDbType.Int, 4, ParameterDirection.Output,0));
+
+				try
+				{
+					System.Web.HttpContext.Current.Trace.Write("getRegExpCount","Opening conn...");
+					conn.Open();
+					cmd.ExecuteNonQuery();
+					if(cmd.Parameters["@count"].Value != null)
+					{
+						System.Web.HttpContext.Current.Cache.Insert(cacheKey, cmd.Parameters["@count"].Value, null, 
+							DateTime.Now.AddSeconds(DefaultCacheDurationSeconds),TimeSpan.Zero);
+						count = HttpContext.Current.Cache[cacheKey];
+					}
+				}
+				catch(Exception e)
+				{
+					System.Web.HttpContext.Current.Trace.Warn(e.ToString());
+					throw e;
+				}
+				finally
+				{
+					System.Web.HttpContext.Current.Trace.Write("getRegExpCount","Entering Finally...");
+					if (conn.State == ConnectionState.Open)
+						conn.Close();
+					System.Web.HttpContext.Current.Trace.Write("getRegExpCount","Exiting...");
+				}
+			}
+			return (int)count;
+		}
+
+		/// <summary>
+		/// listRegExp returns a SqlDataReader with a collection of regular expressions matching 
+		/// several criteria.  This method is overloaded to reflect several different alternative
+		/// sets of filters.
+		/// </summary>
+		/// <returns></returns>
+		public static SqlDataReader listRegExp ()
+		{
+			return listRegExp("", "", -1000, false);
+		}
+
+		/// <summary>
+		/// Returns all regular expressions whose description include keyword.
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <returns></returns>
+		public static SqlDataReader listRegExp (String keyword)
+		{
+			return listRegExp(keyword, "", -1000, false);
+		}
+
+		/// <summary>
+		/// Returns all regular expressions whose description include keyword and the expression includes regexp_substring.
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <param name="regexp_substring"></param>
+		/// <returns></returns>
+		public static SqlDataReader listRegExp (String keyword, String regexp_substring)
+		{
+			return listRegExp(keyword, regexp_substring, -10000, false);
+		}
+
+		/// <summary>
+		/// Returns all regular expressions whose description include keyword and the expression includes regexp_substring,
+		/// with a rating of at least min_rating.
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <param name="regexp_substring"></param>
+		/// <param name="min_rating"></param>
+		/// <returns></returns>
+		public static SqlDataReader listRegExp (String keyword, String regexp_substring, int min_rating)
+		{
+			return listRegExp(keyword, regexp_substring, min_rating, false);
+		}
+
+		/// <summary>
+		/// Returns all regular expressions whose description include keyword and the expression includes regexp_substring,
+		/// with a rating of at least min_rating.  Can return disabled rows if return_disabled = true.
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <param name="regexp_substring"></param>
+		/// <param name="min_rating"></param>
+		/// <param name="return_disabled"></param>
+		/// <returns></returns>
+		public static SqlDataReader listRegExp(string keyword, String regexp_substring, int min_rating, 
+			bool return_disabled) 
+		{
+			return listRegExp(keyword, regexp_substring, min_rating, false, 0);
+		}
+
+		/// <summary>
+		/// Returns up to howmanyrows regular expressions whose description include keyword and the expression includes regexp_substring,
+		/// with a rating of at least min_rating.  Can return disabled rows if return_disabled = true.
+		/// </summary>
+		/// <param name="keyword"></param>
+		/// <param name="regexp_substring"></param>
+		/// <param name="min_rating"></param>
+		/// <param name="return_disabled"></param>
+		/// <param name="howmanyrows"></param>
+		/// <returns></returns>
+		public static SqlDataReader listRegExp(string keyword, String regexp_substring, int min_rating, 
+			bool return_disabled, int howmanyrows) 
+		{
+
+			// Create Instance of Connection and Command Object
+			SqlConnection conn = new SqlConnection(ConnectionString);
+			SqlCommand cmd = new SqlCommand("re_GetRegExp", conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			cmd.Parameters.Add(pMaker("@regexp_substring",SqlDbType.NVarChar, 100, ParameterDirection.Input,regexp_substring));
+			cmd.Parameters.Add(pMaker("@keyword",SqlDbType.NVarChar, 100, ParameterDirection.Input,keyword));
+			cmd.Parameters.Add(pMaker("@min_rating",SqlDbType.Int, 4, ParameterDirection.Input,min_rating));
+			if(return_disabled)
+			{
+				cmd.Parameters.Add(pMaker("@return_disabled",SqlDbType.Bit, 1, ParameterDirection.Input,1));
+			}
+			else
+			{
+				cmd.Parameters.Add(pMaker("@return_disabled",SqlDbType.Bit, 1, ParameterDirection.Input,0));
+			}
+			cmd.Parameters.Add(pMaker("@howmany",SqlDbType.Int, 4, ParameterDirection.Input,howmanyrows));
+
+			// Execute the command
+			conn.Open();
+			SqlDataReader result = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+			// Return the datareader result
+			return result;
+		}
+
+
+		/// <summary>
+		/// Returns a list of all pattern categories as a DataReader
+		/// </summary>
+		/// <param name="useAlphaSort"></param>
+		/// <returns></returns>
+		public static SqlDataReader getPatternCategories( bool useAlphaSort ) 
+		{
+			// Create Instance of Connection and Command Object
+			SqlConnection conn = new SqlConnection(ConnectionString);
+			SqlCommand cmd = new SqlCommand("re_GetCategories", conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlParameter pSortOrder = new SqlParameter("@useAlphaSort", SqlDbType.Int,4);
+			pSortOrder.Value = useAlphaSort ? 1 : 0 ;
+			cmd.Parameters.Add(pSortOrder);
+
+			// Execute the command
+			conn.Open();
+			SqlDataReader result = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+			// Return the datareader result
+			return result;
+		}
+
+
+		/// <summary>
+		/// Returns a list of all patterns for a given Category as a DataReader
+		/// </summary>
+		/// <param name="useAlphaSort"></param>
+		/// <returns></returns>
+		public static SqlDataReader getPatternsByCategory( Int32 categoryId ) 
+		{
+			// Create Instance of Connection and Command Object
+			SqlConnection conn = new SqlConnection(ConnectionString);
+			SqlCommand cmd = new SqlCommand("re_GetRegexpByCategory", conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlParameter pCategoryId = new SqlParameter("@categoryID", SqlDbType.Int,4);
+			pCategoryId.Value = categoryId ;
+			cmd.Parameters.Add(pCategoryId);
+
+			// Execute the command
+			conn.Open();
+			SqlDataReader result = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+			// Return the datareader result
+			return result;
+		}
+
+
+		#region P A T T E R N   C O M M E N T S
+        
+		/// <summary>
+		/// Adds a new regexp user comment to the database.
+		/// </summary>
+		/// <param name="regexpId"></param>
+		/// <param name="title"></param>
+		/// <param name="name"></param>
+		/// <param name="url"></param>
+		/// <param name="comment"></param>
+		/// <returns>number of records affected</returns>
+		public static int addRegExpComment ( int regexpId, string title, string name, string url, string comment )
+		{
+			SqlConnection conn = new SqlConnection(ConnectionString);
+			SqlCommand cmd = new SqlCommand("re_InsertPatternComment",conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlParameter pRegex = new SqlParameter("@regexpId", SqlDbType.Int,4);
+			pRegex.Value = regexpId;
+			cmd.Parameters.Add(pRegex);
+
+			SqlParameter pTitle = new SqlParameter("@title", SqlDbType.NVarChar,150);
+			pTitle.Value = title;
+			cmd.Parameters.Add(pTitle);
+
+			SqlParameter pName = new SqlParameter("@name", SqlDbType.NVarChar,120);
+			pName.Value = name;
+			cmd.Parameters.Add(pName);
+
+			SqlParameter pUrl = new SqlParameter("@url", SqlDbType.NVarChar,120);
+			pUrl.Value = url;
+			cmd.Parameters.Add(pUrl);
+
+			SqlParameter pComment = new SqlParameter("@comment", SqlDbType.NVarChar,1000);
+			pComment.Value = comment;
+			cmd.Parameters.Add(pComment);
+
+             
+			int result ;
+			try
+			{
+				conn.Open();
+				result = (int)cmd.ExecuteScalar();
+			}
+			catch(Exception e)
+			{
+				throw e;
+			}
+			finally
+			{
+				conn.Close();
+			}
+			return result;
+		}
+
+
+		/// <summary>
+		/// Returns user comments for a particular regular expression as a DataReader
+		/// </summary>
+		/// <param name="regexp_id"></param>
+		/// <returns></returns>
+		public static SqlDataReader listRegExpComments(int regexp_id) 
+		{
+			// Create Instance of Connection and Command Object
+			SqlConnection conn = new SqlConnection(ConnectionString);
+			SqlCommand cmd = new SqlCommand("re_GetPatternComments", conn);
+			cmd.CommandType = CommandType.StoredProcedure;
+
+			SqlParameter pRegexp_id = new SqlParameter("@regexp_id", SqlDbType.Int,4);
+			pRegexp_id.Value = regexp_id;
+			cmd.Parameters.Add(pRegexp_id);
+
+			// Execute the command
+			conn.Open();
+			SqlDataReader result = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+			// Return the datareader result
+			return result;
+		}
+
+		#endregion
+    
+	}
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="wrapperOutside">
+  <div id="wrapperInside">
+    <div id="siteTop">
+	<img src="images/RegExLib_logo_header.png" alt="RegExLib.com - The Internet's first Regular Expression Library" width="861" height="55" class="border" />
+      <div id="topNav" class="commonContainerHeader">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="Search.html">Search</a></li>
+          <li><a href="/RETester.aspx">Regex Tester</a></li>
+          <li><a href="DisplayPatterns.aspx">Browse Patterns</a></li>
+          <li><a href="/Add.aspx">Add Regex</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+      <div class="commonContainer">
+        <p class="supportSponsors">Please support<br />
+       	RegExLib Sponsors</p>
+		<div id="leaderboardAdTop">
+			<script type="text/javascript"> 
+				<!-- 
+				lqm_channel=1;
+				lqm_publisher=50;
+				lqm_zone=1;
+				lqm_format=8;
+				//-->
+			 </script>
+			 <script type="text/javascript" src="http://a.lakequincy.com/s.js">
+			 </script>
+		</div>
+		
+      </div>
+    </div>
+	  <div id="siteBody">
+        <div id="sidebarLeft">
+          <div class="commonContainerHeader">
+            <h2>Site Links</h2>
+          </div>
+          <div class="commonContainer">
+            <ul class="sidebarList">
+              <li class="rssLink">Recent Patterns </li>
+              <li>Recent Comments </li>
+              <li>Manage Patterns </li>
+            </ul>
+          </div>
+          <div class="commonContainerHeader">
+            <h2>Top Contributors</h2>
+          </div>
+          <div class="commonContainer">
+            <ul class="sidebarList">
+              <li><a href="/UserPatterns.aspx?authorId=a31a0874-118f-4550-933e-a7c575d149ae">Michael Ash (54)</a></li>
+              <li><a href="/UserPatterns.aspx?authorId=26c277f9-61b2-4bf5-bb70-106880138842">Steven Smith (42)</a></li>
+              <li><a href="/UserPatterns.aspx?authorId=dea17f2a-ed74-417a-8ffe-61450110cf0d">Matt Brooke (22)</a></li>
+            </ul>
+          </div>
+          <div class="commonContainerHeader">
+            <h2>Advertise with us</h2>
+          </div>
+          <div class="commonContainer paddingNoneSides center"> <img src="Images/LQM_advertise_here_button.gif" alt="Ads powered by Lake Quincy Media" width="135" height="90" /> </div>
+        </div>
+	    <div id="sidebarRight">
+          <div class="commonContainerHeader">
+            <h2>Product Spotlight</h2>
+          </div>
+	      <div class="commonContainer">
+            <div class="spotlightAd">
+              <script type="text/javascript"> 
+				<!-- 
+				lqm_channel=1;
+				lqm_publisher=50;
+				lqm_zone=1;
+				lqm_format=2;
+				//-->
+				</script>
+              <script type="text/javascript" src="http://a.lakequincy.com/s.js"></script>
+            </div>
+          </div>
+	      <div class="commonContainerHeader">
+            <h2>Sponsors</h2>
+          </div>
+	      <div class="commonContainer paddingNoneSides center">
+            <script type="text/javascript"> 
+				<!-- 
+				lqm_channel=1;
+				lqm_publisher=50;
+				lqm_zone=1;
+				lqm_format=18;
+				//-->
+				</script>
+            <script type="text/javascript" src="http://a.lakequincy.com/s.js"></script>
+          </div>
+        </div>
+	    <div id="mainContentArea">
+          <div class="commonContainerHeader">
+            <h2>Regular Expression Details </h2>
+          </div>
+	      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="searchResultsTable marginAddBottom">
+            <tr class="title">
+              <th scope="row">Title</th>
+              <td><input name="Test" type="button" class="buttonSmall"  value="Test" />
+                  <input name="Details" type="button" class="buttonSmall" value="Find" />
+                <a href="REDetails.html">One Numeric Digit</a> </td>
+            </tr>
+            <tr class="expression">
+              <th scope="row">Expression</th>
+              <td>
+			  	<div class="expressionDiv">^[0,1]?\d{1}\/(([0-2]?\d{1})|([3][0,1]{1}))\/(([1]{1}[9]{1}[9]{1}\d{1})|([2-9]{1}\d{3}))$[0,1]?\d{1}\/(([0-2]?\d{1})|([3][0,1]{1}))\/(([1]{1}[9]{1}[9]{1}\d{1})|([2-9]{1}\d{3}))$[0,1]?\d{1}\/(([0-2]?\d{1})|([3][0,1]{1}))\/(([1]{1}[9]{1}[9]{1}\d{1})|([2-9]{1}\d{3}))$</div>
+			  </td>
+            </tr>
+            <tr class="description">
+              <th scope="row">Description</th>
+              <td> Matches US <a itxtdid="4621748" target="_blank" href="http://regexlib.com/Search.aspx#" classname="iAs">phone</a> number format. 1 in the beginning is optional, area code is required,  spaces or dashes can be used as optional divider between number groups.  Also alphanumeric format is allowed after area code.</td>
+            </tr>
+            <tr class="matches">
+              <th scope="row">Matches</th>
+              <td> 1.2123644567|||0-234.567/8912|||1-(212)-123 4567</td>
+            </tr>
+            <tr class="nonmatches">
+              <th scope="row">Non-Matches</th>
+              <td> 1.123.123.1234|||(123)-1234-123|||123-1234</td>
+            </tr>
+            <tr class="author">
+              <th scope="row">Author</th>
+              <td><span class="rating">Rating: <img src="Images/Rating3.png" alt="The rating for this expression." /></span> <a href="#">Steven Smith </a> </td>
+            </tr>
+            <tr class="yourRating">
+              <th scope="row">Your Rating</th>
+              <td><span class="rating">
+                <input name="Search" type="button" class="buttonLarge" value="Submit Rating" />
+              </span><strong>Bad</strong> 
+                <label><input name="radiobutton" type="radio" value="1" />1</label>
+                <label><input name="radiobutton" type="radio" value="2" />2</label>
+                <label><input name="radiobutton" type="radio" value="3" />3</label>
+                <label><input name="radiobutton" type="radio" value="4" />4</label>
+                <label><input name="radiobutton" type="radio" value="5" />5</label>
+				<strong>Good</strong>
+			  </td>
+            </tr>
+          </table>
+	      <div class="commonContainerHeader">
+            <h2>Enter New Comment  </h2>
+          </div>
+          <div class="commonContainer">
+				<p>Title<br />
+                <asp:TextBox ID="search" CssClass="formField" runat="server"></asp:TextBox>
+                <input name="textfield" type="text" class="formField" size="80" />
+                <br />
+				Name<br />
+                <input name="textfield" type="text" class="formField" size="80" />
+                <br />
+				Comment<br />
+				<textarea name="textarea" cols="64" rows="6" class="formField"></textarea>
+				<br />
+				Spammers suck - we apologize. Please enter the text shown below to enable your comment (not case sensitive - try as many times as you need to if the first ones are too hard.)<br />
+                <img src="Images/captcha.jpg" alt="captcha" width="206" height="92" class="captchaImage" />
+				<input type="text" name="textfield" class="formField" />
+				<input name="Search2" type="button" class="buttonLarge" value="Submit" style="margin-top: 6px;" /></p>
+         </div>
+	      <div class="commonContainerHeader">
+            <h2>Existing User Comments  </h2>
+          </div>
+	      <div class="commonContainer"> 
+		  	<p>
+				<b>Title: </b>validation<br />
+				<b>Name: </b>suresh<br />
+				<b>Date: </b>11/7/2007 9:55:28 AM<br />
+				<b>Comment: </b><br />good
+			</p>
+			<hr />
+			<p>
+				<b>Title: </b>Shows what Regular Expressions are.<br />
+				<b>Name: </b>Mr C<br />
+				<b>Date: </b>6/8/2006 3:10:10 PM<br />
+				<b>Comment: </b><br />This will show users who come to this site what a regular expression is. This would be very helpful for someone just delving into this stuff.
+			</p>
+	    	</div>
+		</div>
+    </div>
+	  <div id="copyrightLine">Copyright line here.</div>
+  </div>
+</div>
+</div>
+</body>
+</html>
